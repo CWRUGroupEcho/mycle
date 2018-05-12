@@ -1,0 +1,13 @@
+.jumbotron {
+	background-image: url("../img/cleve.jpg");
+	background-attachment: fixed;
+	background-size: contain;
+}
+
+p {
+	font-family: 'Hind', sans-serif;
+}
+
+h1 {
+	font-family: 'Limelight', cursive;
+}
