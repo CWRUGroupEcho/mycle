@@ -17,7 +17,10 @@ var Location = connection.define("book", {
     type: Sequelize.STRING
   },
   photo: {
-    type: Sequelize.string
+    type: Sequelize.STRING
+  }, 
+  likes: {
+    type: Sequelize.INTEGER
   }
 }, {
   timestamps: false
