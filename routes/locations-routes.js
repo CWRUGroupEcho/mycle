@@ -15,7 +15,7 @@ app.get("/", function(req, res) {
   });
 });
 
-
+// get by location
 app.get("/api/location/:location", function(req, res) {
   Location.findOne({
   	where: {
