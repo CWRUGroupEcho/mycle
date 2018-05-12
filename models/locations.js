@@ -18,7 +18,11 @@ var Location = connection.define("book", {
   },
   photo: {
     type: Sequelize.STRING
+<<<<<<< HEAD
   }, 
+=======
+  },
+>>>>>>> master
   likes: {
     type: Sequelize.INTEGER
   }
@@ -29,5 +33,9 @@ var Location = connection.define("book", {
 // Syncs with DB
 Location.sync();
 
+<<<<<<< HEAD
 // Makes the Location Model available for other files.
+=======
+// Makes the Location Model available for other files 
+>>>>>>> master
 module.exports = Location;
