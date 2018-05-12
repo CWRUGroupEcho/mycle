@@ -11,3 +11,8 @@ p {
 h1 {
 	font-family: 'Limelight', cursive;
 }
+
+.aboutUs{
+	font-size: 90%;
+	padding: 5px;
+}
