@@ -16,10 +16,10 @@ app.get("/", function(req, res) {
 });
 
 // get by location
-app.get("/api/location/:location", function(req, res) {
+app.get("/api/name/:name", function(req, res) {
   Location.findOne({
   	where: {
-  		location_name: req.params.location_name
+  		name: req.params.name
   	}
   }).then(function(results) {
   	var hbsObject = {
