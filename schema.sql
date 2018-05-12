@@ -9,6 +9,7 @@ USE mycle_db;
 -- 	description varchar(250) NOT NULL,
 --  adress varchar(250) NOT NULL,
 --  picture_url varchar(250) NOT NULL,
+--  likes int DEFAULT 0,
 -- 	PRIMARY KEY (id)
 -- );
 /* 
@@ -21,5 +22,5 @@ CREATE TABLE reviews
     PRIMARY KEY (id)
 ); */
 
-ALTER TABLE locations
-ADD COLUMN likes int DEFAULT 0 AFTER picture_url;
+/* ALTER TABLE locations
+ADD COLUMN likes int DEFAULT 0 AFTER picture_url; */
