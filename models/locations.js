@@ -26,5 +26,5 @@ var Location = connection.define("book", {
 // Syncs with DB
 Location.sync();
 
-// Makes the Location Model available for other files 
+// Makes the Location Model available for other files.
 module.exports = Location;
