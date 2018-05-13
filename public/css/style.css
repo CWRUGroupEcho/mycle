@@ -1,13 +1,31 @@
 .jumbotron {
+	margin-top: 40px;
 	background-image: url("../img/cleve.jpg");
 	background-attachment: fixed;
-	background-size: contain;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 40em;
 }
 
 p {
 	font-family: 'Hind', sans-serif;
 }
 
+.lead {
+	color: #fff;
+	font-weight: bold;
+	font-family: 'Hind', sans-serif;
+	font-size: 110%;
+	text-align: right;
+	margin-top: 20%;
+}
+
 h1 {
+	width: 50%;
+	text-align: center;
 	font-family: 'Limelight', cursive;
+	background-color: #fff;
+	opacity: .8;
+	padding: 8px;
+
 }
