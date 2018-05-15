@@ -1,13 +1,52 @@
-.jumbotron {
+
+.main {
+	margin-top: 60px;
 	background-image: url("../img/cleve.jpg");
 	background-attachment: fixed;
-	background-size: contain;
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*height: 60%;*/
 }
 
 p {
 	font-family: 'Hind', sans-serif;
+	background-color: #695E5A;
+}
+
+.lead {
+    -webkit-animation-name: fadein; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: fadein;
+    animation-duration: 3s;
+	color: #fff;
+	font-family: 'Hind', sans-serif;
+	font-size: 190%;
+	text-align: center;
+	margin-top: 50%;
+	opacity: .8;
+}
+
+@-webkit-keyframes fadein { /* safari*/
+    0%   {opacity: 0;}
+    50%  {opacity: .4;}
+    100% {opacity: .8;}
+}
+
+@keyframes fadein {
+    0%   {opacity: 0;}
+    50%  {opacity: .4;}
+    100% {opacity: .8;}
+}
+
+.title {
+	width: 50%;
+	text-align: center;
+	padding: 8px;
 }
 
 h1 {
 	font-family: 'Limelight', cursive;
+	font-size: 350%;
+	background-color: #fff;
+	opacity: .8;
 }
