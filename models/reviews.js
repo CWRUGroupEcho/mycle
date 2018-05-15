@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 
 // Creates a Location model that matches up with DB
-var Review = connection.define("Review", {
+var Review = sequelize.define("Review", {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
