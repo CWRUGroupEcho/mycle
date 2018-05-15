@@ -47,9 +47,10 @@ app.get("/api/category/:category", function(req, res) {
 
 // put for liking locations
 app.put("/api/likes", function(req, res) {
-  var likes = req.body.likes
+  var localLikes = req.params.likes
   Location.update({ 
-	likes: likes + 1
+	likes: localLikes + 1
+	console.log("new likes: " + localLikes + 1)
   }).then(function(results) {
 	  var hbsObject = {
 		Location: data
