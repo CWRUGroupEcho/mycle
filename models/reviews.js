@@ -1,8 +1,4 @@
-// Dependencies
-
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references my connection to the DB.
-var connection = require("");
+module.exports = function(sequelize, DataTypes) {
 
 // Creates a Location model that matches up with DB
 var Review = connection.define("Review", {
@@ -27,14 +23,11 @@ var Review = connection.define("Review", {
       len: [1]
     }
   },
-
+  created: {
+    type: DataTypes.DATEONLY
+  }
 }, {
-  // timestamps: false
-  createdAt: DataTypes.DATEONLY
+  timestamps: false
 });
-
-// Syncs with DB
-Review.sync();
-
-// Makes the Location Model available for other files.
-module.exports = Review;
+return Review;
+}
