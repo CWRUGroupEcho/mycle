@@ -1,6 +1,5 @@
 // Dependencies
 
-
 var Sequelize = require("sequelize");
 // sequelize (lowercase) references my connection to the DB.
 var connection = require("");
@@ -31,5 +30,4 @@ var Location = connection.define("book", {
 Location.sync();
 
 // Makes the Location Model available for other files.
-
 module.exports = Location;

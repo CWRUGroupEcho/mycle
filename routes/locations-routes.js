@@ -6,7 +6,7 @@ module.exports = function(app) {
 
 // welcome page get all for now - need to alter to get most liked locations
 app.get("/", function(req, res) {
-  Location.findAll({}).then(function(results) {
+  Location.max("likes").then(function(results) {
     var hbsObject = {
       Location: data
     };
@@ -45,4 +45,18 @@ app.get("/api/category/:category", function(req, res) {
   });
 });
 
-// post for liking locations
+// put for liking locations
+app.put("/api/likes", function(req, res) {
+  var likes = req.body.likes
+  Location.update({ 
+	likes: likes + 1
+  }).then(function(results) {
+	  var hbsObject = {
+		Location: data
+	  };
+	  console.log(hbsObject);
+	  res.render("location", hbsObject);
+  });
+});
+
+// Model.update({ field: sequelize.literal('field + 2') }, { where: { id: model_id } });

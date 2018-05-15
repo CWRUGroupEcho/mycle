@@ -5,18 +5,32 @@ var Sequelize = require("sequelize");
 var connection = require("");
 
 // Creates a Location model that matches up with DB
-var Review = connection.define("book", {
+var Review = connection.define("Review", {
   name: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1]
+    }
   },
   username: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1]
+    }
   },
   body: {
-    type: Sequelize.TEXT
+    type: DataTypes.TEXT
+    allowNull: false
+    validate: {
+      len: [1]
+    }
   },
+
 }, {
-  timestamps: false
+  // timestamps: false
+  createdAt: DataTypes.DATEONLY
 });
 
 // Syncs with DB
