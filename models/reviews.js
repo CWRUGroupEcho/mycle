@@ -17,8 +17,8 @@ var Review = sequelize.define("Review", {
     }
   },
   body: {
-    type: DataTypes.TEXT
-    allowNull: false
+    type: DataTypes.TEXT,
+    allowNull: false,
     validate: {
       len: [1]
     }

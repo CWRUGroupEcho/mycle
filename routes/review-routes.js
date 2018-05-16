@@ -1,3 +1,8 @@
+var Review = require("../models/reviews.js")
+
+module.exports = function(app) {
+
+
   // Add a review
   app.post("/api/new", function(req, res) {
     console.log("New Review:");
@@ -11,3 +16,4 @@
     }
   });
 
+}

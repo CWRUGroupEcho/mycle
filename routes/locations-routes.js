@@ -62,4 +62,6 @@ app.put("/api/likes", function(req, res) {
   });
 });
 
+}
+
 // Model.update({ field: sequelize.literal('field + 2') }, { where: { id: model_id } });
