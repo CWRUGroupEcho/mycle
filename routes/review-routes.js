@@ -11,8 +11,8 @@ module.exports = function(app) {
       name: req.body.name,
       username: req.body.username,
       body: req.body.body
-    }), function(result) {
-      res.json(result)
+    }), function(results) {
+      res.json(results)
     }
   });
 

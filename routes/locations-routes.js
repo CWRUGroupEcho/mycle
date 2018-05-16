@@ -1,6 +1,7 @@
 // dependencies
-
 var Location = require("../models/locations.js")
+
+var Review = require("../models/reviews.js")
 
 module.exports = function(app) {
 
@@ -8,7 +9,7 @@ module.exports = function(app) {
 app.get("/", function(req, res) {
   Location.max("likes").then(function(results) {
     var hbsObject = {
-      Location: data
+      Location: results
     };
     console.log(hbsObject);
     res.render("welcome", hbsObject);
@@ -20,10 +21,11 @@ app.get("/api/name/:name", function(req, res) {
   Location.findOne({
   	where: {
   		name: req.params.name
-  	}
+  	},
+
   }).then(function(results) {
   	var hbsObject = {
-  	  Location: data
+  	  Location: results
   	};
   	console.log(hbsObject);
   	res.render("location", hbsObject);
@@ -38,12 +40,21 @@ app.get("/api/category/:category", function(req, res) {
   	}
   }).then(function(results) {
   	var hbsObject = {
-  	  Location: data
+  	  Location: results
   	};
   	console.log(hbsObject);
   	res.render("category", hbsObject);
   });
 });
+
+//get reviews for locations
+app.get("/api/reviews/:location", function(req, res) {
+  Location.findAll({
+	where: {
+
+	}
+  })
+})
 
 // put for liking locations
 app.put("/api/likes", function(req, res) {
@@ -55,12 +66,14 @@ app.put("/api/likes", function(req, res) {
 
   }).then(function(results) {
 	  var hbsObject = {
-		Location: data
+		Location: results
 	  };
 	  console.log(hbsObject);
 	  res.render("location", hbsObject);
   });
 });
+
+
 
 }
 
