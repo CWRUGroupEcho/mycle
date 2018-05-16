@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var Location = sequelize.define("Post", {
+  var Locations = sequelize.define("Post", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -37,14 +37,14 @@ module.exports = function(sequelize, DataTypes) {
     timestamps: false
 });
 
-  Location.associate = function(models) {
-    Location.hasMany(models.Review, {
+  Locations.associate = function(models) {
+    Locations.hasMany(models.Reviews, {
       onDelete: "cascade"
     });
   };
 
 
-  return Location;
+  return Locations;
 
 };
 

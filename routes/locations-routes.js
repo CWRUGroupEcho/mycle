@@ -1,7 +1,7 @@
 // dependencies
-var Location = require("../models/locations.js")
+var Locations = require("../models/locations.js")
 
-var Review = require("../models/reviews.js")
+var Reviews = require("../models/reviews.js")
 
 module.exports = function(app) {
 
@@ -17,15 +17,15 @@ app.get("/", function(req, res) {
 });
 
 // get by location
-app.get("/api/name/:name", function(req, res) {
-  Location.findOne({
+app.get("/api/locations/:location_id", function(req, res) {
+  Locations.findOne({
   	where: {
-  		name: req.params.name
+  		location_id: req.params.location_id
   	},
 
   }).then(function(results) {
   	var hbsObject = {
-  	  Location: results
+  	  Locations: results
   	};
   	console.log(hbsObject);
   	res.render("location", hbsObject);
@@ -34,13 +34,13 @@ app.get("/api/name/:name", function(req, res) {
 
 // get by category
 app.get("/api/category/:category", function(req, res) {
-  Location.findOne({
+  Locations.findOne({
   	where: {
   		cateory: req.params.category
   	}
   }).then(function(results) {
   	var hbsObject = {
-  	  Location: results
+  	  Locations: results
   	};
   	console.log(hbsObject);
   	res.render("category", hbsObject);
@@ -49,10 +49,16 @@ app.get("/api/category/:category", function(req, res) {
 
 //get reviews for locations
 app.get("/api/reviews/:location", function(req, res) {
-  Location.findAll({
+  Locations.findAll({
 	where: {
-
+		location_id: req.params.location_id
 	}
+  }).then(function(results) {
+  	var hbsObject = {
+  		Locations: results
+  	};
+  	console.log(hbsObject);
+  	res.render("reviews", hbsObject);
   })
 })
 
@@ -61,18 +67,17 @@ app.put("/api/likes", function(req, res) {
   var localLikes = req.params.likes
   var newLikes = (localLikes + 1)
   console.log("new likes: " + newLikes)
-  Location.update({ 
+  Locations.update({ 
 	likes: newLikes
 
   }).then(function(results) {
 	  var hbsObject = {
-		Location: results
+		Locations: results
 	  };
 	  console.log(hbsObject);
 	  res.render("location", hbsObject);
   });
 });
-
 
 
 }
