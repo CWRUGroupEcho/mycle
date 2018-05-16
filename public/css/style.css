@@ -57,3 +57,25 @@ h1 {
 	background-color: #fff;
 	opacity: .8;
 }
+
+/* Media queries for screens less than 992px */
+
+@media screen and (max-width: 992px) {
+    .title {
+    	margin-top: 10%;
+        width: 100%;
+        font-size: 85%;
+      /*  padding: 0 10% 10% 20%;
+    	margin: 2% -15% -30% 20%; */
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .title {
+    	margin-top: 10%;
+        width: 100%;
+        font-size: 80%;
+      /*  padding: 0 10% 10% 20%;
+    	margin: 2% -15% -30% 20%; */
+    }
+}
