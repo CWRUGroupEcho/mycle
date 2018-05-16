@@ -16,4 +16,17 @@ module.exports = function(app) {
     }
   });
 
+  Review.associate = function(models) {
+
+    // reviews belong to locations
+    // foreign key restraint means a review cannot be created unless it is tied to a location
+    Review.belongsTo(models.Location, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+
+return Review;
 }

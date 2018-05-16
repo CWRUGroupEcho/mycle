@@ -36,6 +36,14 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     timestamps: false
 });
+
+  Location.associate = function(models) {
+    Location.hasMany(models.Post, {
+      onDelete: "cascade"
+    });
+  };
+
+
   return Location;
 
 };
