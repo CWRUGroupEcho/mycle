@@ -12,7 +12,7 @@ app.get("/", function(req, res) {
   	limit: 3
 }).then(function(results) {
     var hbsObject = {
-      Location: results
+      Locations: results
     };
     
     res.render("welcome", hbsObject);
@@ -39,7 +39,7 @@ app.get("/api/locations/:id", function(req, res) {
 
 // get by category
 app.get("/api/category/:category", function(req, res) {
-  db.Locations.findAll({
+  db.locations.findAll({
   	where: {
   		category: req.params.category
   	},
@@ -50,8 +50,8 @@ app.get("/api/category/:category", function(req, res) {
   	  Locations: results
   	};
   	console.log(hbsObject);
-  	// res.render("category", hbsObject);
-  	res.json(hbsObject)
+  	res.render("welcome", hbsObject);
+  	// res.json(hbsObject)
   });
 });
 
