@@ -18,7 +18,7 @@ CREATE TABLE reviews
 (
     id int NOT NULL AUTO_INCREMENT,
 	author varchar(50) DEFAULT "Guest",
-	review varchar(250) NOT NULL,
+	body varchar(250) NOT NULL,
     created_at DATE,
     PRIMARY KEY (id)
 );
