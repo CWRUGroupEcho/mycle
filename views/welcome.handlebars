@@ -4,12 +4,12 @@
         <div class="col-sm-8">
             <div class="card">
               <div class="card-title">
-                <h2 class="location">{{name}}</h2>
+                <h2 class="location"><a href="/api/name/{{name}}">{{name}}</a></h2>
               </div>
                 <div class="card-body">
                   <p class="card-text">{{description}}</p>
                   <button class="like" data-id="{{this.id}}"><i class="fas fa-thumbs-up"></i></button>
-                  <button class="review" data-id="{{this.id}}">Review</button>
+                  <a href="/api/review" data-id="{{this.id}}" class="btn btn-info review" role="button">Review!</a>
                 </div>
               </div>
         </div>
