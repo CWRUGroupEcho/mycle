@@ -5,18 +5,18 @@ module.exports = function(app) {
 
 // welcome page get all for now - need to alter to get most liked locations
 app.get("/", function(req, res) {
-  db.Locations.findAll({
+  db.locations.findAll({
   	order: [
   	  ["likes", "DESC"]
   	],
   	limit: 3
 }).then(function(results) {
     var hbsObject = {
-      Locations: results
+      Location: results
     };
-    console.log(hbsObject);
-    // res.render("welcome", hbsObject);
-    res.json(hbsObject)
+    
+    res.render("welcome", hbsObject);
+    
   });
 });
 
@@ -71,6 +71,9 @@ app.get("/api/reviews/:Locationid", function(req, res) {
   	res.json(hbsObject)
   })
 })
+app.get("/api/review", function(req, res) {
+  res.render("review")
+});
 
 // put for liking locations
 app.put("/api/likes", function(req, res) {

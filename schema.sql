@@ -22,5 +22,5 @@ CREATE TABLE reviews
     PRIMARY KEY (id)
 ); */
 
-/* ALTER TABLE locations
-ADD COLUMN likes int DEFAULT 0 AFTER picture_url; */
+ ALTER TABLE locations
+ADD COLUMN category varchar(25)  AFTER picture_url; 
