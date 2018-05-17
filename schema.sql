@@ -5,7 +5,7 @@ USE mycle_db;
 -- CREATE TABLE locations
 -- (
 -- 	id int NOT NULL AUTO_INCREMENT,
--- 	name varchar(50) NOT NULL,
+-- 	location_name varchar(50) NOT NULL,
 -- 	description varchar(250) NOT NULL,
 --  adress varchar(250) NOT NULL,
 --  picture_url varchar(250) NOT NULL,

@@ -25,49 +25,54 @@ app.get("/", function(req, res) {
 });
 
 // get by location
-app.get("/api/locations/:location_name", function(req, res) {
+app.get("/api/locations/:id", function(req, res) {
   db.Locations.findOne({
   	where: {
-  	  location_name: req.params.location_name
+  	 name: req.params.name
   	},
-
+  	include: [db.Reviews]
   }).then(function(results) {
   	var hbsObject = {
   	  Locations: results
   	};
   	console.log(hbsObject);
-  	res.render("location", hbsObject);
+  	// res.render("location", hbsObject);
+  	res.json(hbsObject)
   });
 });
 
 // get by category
 app.get("/api/category/:category", function(req, res) {
-  db.Locations.findOne({
+  db.Locations.findAll({
   	where: {
-  		cateory: req.params.category
-  	}
+  		category: req.params.category
+  	},
+
+  	// include: [db.Reviews]
   }).then(function(results) {
   	var hbsObject = {
   	  Locations: results
   	};
   	console.log(hbsObject);
-  	res.render("category", hbsObject);
+  	// res.render("category", hbsObject);
+  	res.json(hbsObject)
   });
 });
 
 //get reviews for locations
-app.get("/api/reviews/:location_name", function(req, res) {
+app.get("/api/reviews/:name", function(req, res) {
   db.Reviews.findAll({
 	where: {
-	  location_name: req.params.location_name
+	  Locationid: req.params.Locationid
 	},
-	include: [Locations]
+	include: [db.Locations]
   }).then(function(results) {
   	var hbsObject = {
   		Reviews: results
   	};
   	console.log(hbsObject);
-  	res.render("reviews", hbsObject);
+  	// res.render("reviews", hbsObject);
+  	res.json(hbsObject)
   })
 })
 
