@@ -60,3 +60,7 @@ h1 {
 .location{
 	background-color: blue;
 }
+
+.review{
+	float: right;
+}
