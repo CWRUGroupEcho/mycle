@@ -28,7 +28,7 @@ app.get("/", function(req, res) {
 app.get("/api/locations/:id", function(req, res) {
   db.Locations.findOne({
   	where: {
-  	 name: req.params.name
+  	 id: req.params.id
   	},
   	include: [db.Reviews]
   }).then(function(results) {
