@@ -1,35 +1,57 @@
-// Dependencies
 
-
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references my connection to the DB.
-var connection = require("");
-
-// Creates a Location model that matches up with DB
-var Location = connection.define("book", {
-  name: {
-    type: Sequelize.STRING
-  },
-  description: {
-    type: Sequelize.TEXT
-  },
-  address: {
-    type: Sequelize.STRING
-  },
-  photo: {
-    type: Sequelize.STRING
-  }, 
-
-  likes: {
-    type: Sequelize.INTEGER
-  }
-}, {
-  timestamps: false
+module.exports = function(sequelize, DataTypes) {
+  var Locations = sequelize.define("Locations", {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    }, 
+    likes: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
+  }, {
+    timestamps: false
 });
 
-// Syncs with DB
-Location.sync();
+  Locations.associate = function(models) {
+    Locations.hasMany(models.Reviews, {
+      onDelete: "cascade"
+    });
+  };
 
-// Makes the Location Model available for other files.
 
-module.exports = Location;
+  return Locations;
+
+};
+
