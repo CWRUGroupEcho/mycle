@@ -1,4 +1,4 @@
-var Reviews = require("../models/reviews.js")
+var db = require("../models")
 
 module.exports = function(app) {
 
@@ -7,7 +7,7 @@ module.exports = function(app) {
   app.post("/api/new", function(req, res) {
     console.log("New Review:");
     console.log(req.body);
-    Reviews.create({
+    db.Reviews.create({
       location_name: req.body.location_name,
       username: req.body.username,
       body: req.body.body
