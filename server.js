@@ -43,8 +43,6 @@ require("./routes/review-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
-
-// sequelize sync
 db.sequelize.sync({ force: false })
    .then(function() {
        console.log("Starting the server on port " + PORT)
