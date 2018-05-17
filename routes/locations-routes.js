@@ -81,10 +81,10 @@ app.put("/api/likes", function(req, res) {
   var localLikes = Number(req.params.likes)
   var newLikes = (localLikes + 1)
   console.log("new likes: " + newLikes)
-  db.Locations.update({ 
-	likes: newLikes
-
-  }).then(function(results) {
+  db.Locations.update(
+	{likes: newLikes},
+	{where: req.params.id}
+	).then(function(results) {
 	  var hbsObject = {
 		Locations: results
 	  };

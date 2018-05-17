@@ -4,7 +4,7 @@ module.exports = function(app) {
 
 
   // Add a review
-  app.post("/api/new", function(req, res) {
+  app.post("/api/review", function(req, res) {
     console.log("New Review:");
     console.log(req.body);
     db.Reviews.create({
@@ -17,5 +17,5 @@ module.exports = function(app) {
   });
 
 
-return Reviews;
+// return Reviews;
 }
