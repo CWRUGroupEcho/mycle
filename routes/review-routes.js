@@ -8,7 +8,7 @@ module.exports = function(app) {
     console.log("New Review:");
     console.log(req.body);
     db.Reviews.create({
-      location_name: req.body.location_name,
+      locationName: req.body.locationName,
       username: req.body.username,
       body: req.body.body
     }), function(results) {
