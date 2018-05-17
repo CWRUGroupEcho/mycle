@@ -60,7 +60,7 @@ app.get("/api/category/:category", function(req, res) {
 });
 
 //get reviews for locations
-app.get("/api/reviews/:name", function(req, res) {
+app.get("/api/reviews/:Locationid", function(req, res) {
   db.Reviews.findAll({
 	where: {
 	  Locationid: req.params.Locationid
