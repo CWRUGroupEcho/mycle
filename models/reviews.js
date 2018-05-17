@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 
 // Creates a Location model that matches up with DB
 var Reviews = sequelize.define("Reviews", {
-  name: {
+  locationName: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
@@ -23,23 +23,19 @@ var Reviews = sequelize.define("Reviews", {
       len: [1]
     }
   },
-  created: {
-    type: DataTypes.DATEONLY
-  }
+
 }, {
-  timestamps: false
+  timestamps: true
 });
 
   Reviews.associate = function(models) {
 
-    // reviews belong to locations
-    // foreign key restraint means a review cannot be created unless it is tied to a location
-    Reviews.belongsTo(models.Locations, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  //   // reviews belong to locations
+  //   // foreign key restraint means a review cannot be created unless it is tied to a location
+     Reviews.belongsTo(models.Locations
+       // foreignKey: "id"
+);
+   };
 
-return Review;
+return Reviews;
 }

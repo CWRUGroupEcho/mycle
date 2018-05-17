@@ -1,26 +1,34 @@
 // dependencies
-var Locations = require("../models/locations.js")
+// var Locations = require("../models/locations.js")
 
-var Reviews = require("../models/reviews.js")
+// var Reviews = require("../models/reviews.js")
+
+var db = require("../models")
 
 module.exports = function(app) {
 
 // welcome page get all for now - need to alter to get most liked locations
 app.get("/", function(req, res) {
-  Location.max("likes").then(function(results) {
+  db.Locations.findAll({
+  	order: [
+  	  ["likes", "DESC"]
+  	],
+  	limit: 3
+}).then(function(results) {
     var hbsObject = {
-      Location: results
+      Locations: results
     };
     console.log(hbsObject);
-    res.render("welcome", hbsObject);
+    // res.render("welcome", hbsObject);
+    res.json(hbsObject)
   });
 });
 
 // get by location
-app.get("/api/locations/:location_id", function(req, res) {
-  Locations.findOne({
+app.get("/api/locations/:location_name", function(req, res) {
+  db.Locations.findOne({
   	where: {
-  		location_id: req.params.location_id
+  	  location_name: req.params.location_name
   	},
 
   }).then(function(results) {
@@ -34,7 +42,7 @@ app.get("/api/locations/:location_id", function(req, res) {
 
 // get by category
 app.get("/api/category/:category", function(req, res) {
-  Locations.findOne({
+  db.Locations.findOne({
   	where: {
   		cateory: req.params.category
   	}
@@ -48,14 +56,15 @@ app.get("/api/category/:category", function(req, res) {
 });
 
 //get reviews for locations
-app.get("/api/reviews/:location", function(req, res) {
-  Locations.findAll({
+app.get("/api/reviews/:location_name", function(req, res) {
+  db.Reviews.findAll({
 	where: {
-		location_id: req.params.location_id
-	}
+	  location_name: req.params.location_name
+	},
+	include: [Locations]
   }).then(function(results) {
   	var hbsObject = {
-  		Locations: results
+  		Reviews: results
   	};
   	console.log(hbsObject);
   	res.render("reviews", hbsObject);
@@ -64,10 +73,10 @@ app.get("/api/reviews/:location", function(req, res) {
 
 // put for liking locations
 app.put("/api/likes", function(req, res) {
-  var localLikes = req.params.likes
+  var localLikes = Number(req.params.likes)
   var newLikes = (localLikes + 1)
   console.log("new likes: " + newLikes)
-  Locations.update({ 
+  db.Locations.update({ 
 	likes: newLikes
 
   }).then(function(results) {
