@@ -1,5 +1,7 @@
-
-
+.images {
+	width: 200px;
+	border: 6px solid #D7DDE6;
+}
 
 .main {
 	margin-top: 60px;
