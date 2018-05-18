@@ -2,6 +2,7 @@
 
 USE mycle_db;
 
+
 CREATE TABLE locations
 (
 	id int NOT NULL AUTO_INCREMENT,
@@ -14,6 +15,7 @@ CREATE TABLE locations
 	PRIMARY KEY (id)
 );
  
+
 CREATE TABLE reviews
 (
     id int NOT NULL AUTO_INCREMENT,
