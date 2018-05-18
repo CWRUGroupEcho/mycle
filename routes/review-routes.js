@@ -7,12 +7,6 @@ var db = require("../models")
 module.exports = function(app) {
 
 
-<<<<<<< HEAD
-
-
-};
-
-=======
   // Add a review
   app.post("/api/review", function(req, res) {
     console.log("New Review:");
@@ -29,4 +23,3 @@ module.exports = function(app) {
 
 // return Reviews;
 }
->>>>>>> a6631953443640f5be24ac233faa5862baeb3a02
