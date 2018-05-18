@@ -1,6 +1,5 @@
 // dependencies
 // var Locations = require("../models/locations.js")
-
 // var Reviews = require("../models/reviews.js")
 
 var db = require("../models")
