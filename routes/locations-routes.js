@@ -23,6 +23,8 @@ app.get("/", function(req, res) {
   });
 });
 
+
+
 // get by location
 app.get("/api/locations/:id", function(req, res) {
   db.Locations.findOne({
