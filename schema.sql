@@ -1,8 +1,10 @@
 ### Schema
 
+/* CREATE database mycle_db; */
 USE mycle_db;
 
 SELECT * FROM locations;
+
 
 
 /* CREATE TABLE locations

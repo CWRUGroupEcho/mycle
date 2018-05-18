@@ -2,7 +2,9 @@ var db = require("../models")
 
 module.exports = function(app) {
 
-  
+  app.get("/api/review", function(req,res){
+    res.render("review")
+  });
 
 
   // Add a review
