@@ -9,7 +9,7 @@ module.exports = function(app) {
     console.log(req.body);
     db.Reviews.create({
       locationName: req.body.locationName,
-      username: req.body.username,
+      author: req.body.author,
       body: req.body.body
     }), function(results) {
       res.json(results)
