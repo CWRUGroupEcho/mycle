@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-var Location = require("../models/locations.js")
-=======
 var db = require("../models")
->>>>>>> a6631953443640f5be24ac233faa5862baeb3a02
 
 module.exports = function(app) {
+
+  
 
 
   // Add a review
@@ -19,7 +17,4 @@ module.exports = function(app) {
       res.json(results)
     }
   });
-
-
-// return Reviews;
 }

@@ -1,22 +1,15 @@
 // dependencies
-<<<<<<< HEAD
-=======
 // var Locations = require("../models/locations.js")
 
 // var Reviews = require("../models/reviews.js")
 
->>>>>>> a6631953443640f5be24ac233faa5862baeb3a02
 var db = require("../models")
 
 module.exports = function(app) {
 
 // welcome page get all for now - need to alter to get most liked locations
 app.get("/", function(req, res) {
-<<<<<<< HEAD
-  db.locations.findAll({
-=======
   db.Locations.findAll({
->>>>>>> a6631953443640f5be24ac233faa5862baeb3a02
   	order: [
   	  ["likes", "DESC"]
   	],
@@ -25,15 +18,9 @@ app.get("/", function(req, res) {
     var hbsObject = {
       Locations: results
     };
-<<<<<<< HEAD
     
     res.render("welcome", hbsObject);
     
-=======
-    console.log(hbsObject);
-    // res.render("welcome", hbsObject);
-    res.json(hbsObject)
->>>>>>> a6631953443640f5be24ac233faa5862baeb3a02
   });
 });
 
@@ -42,15 +29,12 @@ app.get("/api/locations/:id", function(req, res) {
   db.Locations.findOne({
   	where: {
   	 id: req.params.id
-  	},
-  	include: [db.Reviews]
+  	}
+  	// include: [db.Reviews]
   }).then(function(results) {
-  	var hbsObject = {
-  	  Locations: results
-  	};
-  	console.log(hbsObject);
-  	// res.render("location", hbsObject);
-  	res.json(hbsObject)
+		console.log(results) 
+  	
+  	res.render("location", results.dataValues);
   });
 });
 
@@ -67,8 +51,8 @@ app.get("/api/category/:category", function(req, res) {
   	  Locations: results
   	};
   	console.log(hbsObject);
-  	// res.render("category", hbsObject);
-  	res.json(hbsObject)
+  	res.render("welcome", hbsObject);
+  	
   });
 });
 

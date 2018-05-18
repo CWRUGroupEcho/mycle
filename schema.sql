@@ -2,8 +2,10 @@
 
 USE mycle_db;
 
+SELECT * FROM locations;
 
-CREATE TABLE locations
+
+/* CREATE TABLE locations
 (
 	id int NOT NULL AUTO_INCREMENT,
 	locationName varchar(50) NOT NULL,
@@ -23,7 +25,7 @@ CREATE TABLE reviews
 	body varchar(250) NOT NULL,
     created_at DATE,
     PRIMARY KEY (id)
-);
+); */
 /* 
  ALTER TABLE locations
 ADD COLUMN category varchar(25)  AFTER picture_url; 

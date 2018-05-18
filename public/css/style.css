@@ -68,9 +68,6 @@ h1 {
 	background-color: blue;
 }
 
-.review{
-	float: right;
-}
 /* Media queries for screens less than 992px */
 
 @media screen and (max-width: 992px) {

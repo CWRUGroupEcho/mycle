@@ -38,7 +38,7 @@ app.set("view engine", "handlebars");
 // =============================================================
 
 require("./routes/locations-routes.js")(app);
-// require("./routes/review-routes.js")(app);
+require("./routes/review-routes.js")(app);
 
 
 
