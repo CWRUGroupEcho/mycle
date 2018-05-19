@@ -1,0 +1,46 @@
+   <head>
+      <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    </head>
+<div class="row info">
+        <div class="col-sm-8">
+            <div class="card">
+              <div class="card-title">
+                <h2 class="location"><a href="/api/locations/{{id}}">{{locationName}}</a></h2>
+              </div>
+                <div class="card-body">
+                  <p class="card-text">{{description}}</p>
+                  <button class="like" data-id="{{id}}"><i class="fas fa-thumbs-up"></i></button>
+                  <a href="/api/review/:{{id}}" data-id="{{id}}" class="btn btn-info review" style="float:right" role="button">Review!</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-4">
+          <img class="image" src="/{{picture_url}}">
+        </div>
+</div>
+
+<form action="/api/submitReview/{{id}}" method="post">
+Name: <input type="text" name="name"><br>
+Review: <textarea class="reviewBody" name="body" rows="4" cols="50"> 
+</textarea><br>
+<input type="submit">
+</form>
+
+{{#each Reviews}}
+
+<div class="row info">
+        <div class="col-sm-8">
+            <div class="card">
+              <div class="card-title">
+                <h2 class="review">{{Reviews.name}}</h2>
+              </div>
+                <div class="card-body">
+                  <p class="card-text">{{Reviews.body}}</p>
+                  <div class="card-footer">{{Reviews.createdAt}}</div>
+                </div>
+              </div>
+        </div>
+
+</div>
+
+{{/each}}

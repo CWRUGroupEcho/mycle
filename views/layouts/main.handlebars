@@ -6,14 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Hind|Limelight" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <title>MyCLE</title>
     <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    {{!-- Font Awesome link --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 
 <body>
 
-    {{{ body }}}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/api/category/restaurants">Restaurants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/api/category/nightlife">Nightlife</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/api/category/culture">Culture</a>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item dropdown justify-content-right">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        About the Project
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <p class="aboutUs">We area group of junior web developers taking part in the CWRU January 2018 coding bootcamp. We came
+                            together to make a fun webapp to show our favorite places around Cleveland and to allow you,
+                            the user, to review and/or like the locations. </p>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://github.com/CWRUGroupEcho/mycle">Github Repo</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Contributors
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://github.com/Fuzzy-chan">Kenneth Robinson</a>
+                        <a class="dropdown-item" href="https://github.com/liztrenholme">Liz Trenholme</a>
+                        <a class="dropdown-item" href="https://github.com/kevinglasow">Kevin Glasow</a>
+                        <a class="dropdown-item" href="https://github.com/ldillon16">Lindsay Dillon</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="container main">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title">
+                        <h1>My Cleveland</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                </div>
+                <div class="col-sm-6">
+                    <p class="lead">Explore and review.</p>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+        </div>
+        {{{ body }}}
+        </div>
+        
+
 </body>
 
 </html>

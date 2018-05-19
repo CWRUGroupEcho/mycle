@@ -18,26 +18,24 @@ app.get("/", function(req, res) {
     var hbsObject = {
       Locations: results
     };
-    console.log(hbsObject);
-    // res.render("welcome", hbsObject);
-    res.json(hbsObject)
+    
+    res.render("welcome", hbsObject);
+    
   });
 });
 
 // get by location
 app.get("/api/locations/:id", function(req, res) {
+	console.log(req.params.id)
   db.Locations.findOne({
   	where: {
   	 id: req.params.id
   	},
   	include: [db.Reviews]
   }).then(function(results) {
-  	var hbsObject = {
-  	  Locations: results
-  	};
-  	console.log(hbsObject);
-  	// res.render("location", hbsObject);
-  	res.json(hbsObject)
+		console.log(results) 
+  	
+  	res.render("location", results.dataValues);
   });
 });
 
@@ -53,9 +51,9 @@ app.get("/api/category/:category", function(req, res) {
   	var hbsObject = {
   	  Locations: results
   	};
-  	console.log(hbsObject);
-  	// res.render("category", hbsObject);
-  	res.json(hbsObject)
+  	// console.log(hbsObject);
+  	res.render("welcome", hbsObject);
+  	
   });
 });
 
@@ -70,7 +68,7 @@ app.get("/api/reviews/:Locationid", function(req, res) {
   	var hbsObject = {
   		Reviews: results
   	};
-  	console.log(hbsObject);
+  	// console.log(hbsObject);
   	// res.render("reviews", hbsObject);
   	res.json(hbsObject)
   })
@@ -88,7 +86,7 @@ app.put("/api/likes", function(req, res) {
 	  var hbsObject = {
 		Locations: results
 	  };
-	  console.log(hbsObject);
+	  // console.log(hbsObject);
 	  res.render("location", hbsObject);
   });
 });

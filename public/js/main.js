@@ -21,7 +21,7 @@ $(".LIKEBUTTON").on("click", function(event) {
 		// reload the page to get updated number of likes
 		location.reload();
 	})
-}
+},
 
 $(".SUBMITBUTTON").on("submit", function(event) {
 	event.preventDefault();
