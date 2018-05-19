@@ -10,7 +10,6 @@
                 <div class="card-body">
                   <p class="card-text">{{description}}</p>
                   <button class="like" data-id="{{id}}"><i class="fas fa-thumbs-up"></i></button>
-                  <a href="/api/review/:{{id}}" data-id="{{id}}" class="btn btn-info review" style="float:right" role="button">Review!</a>
                 </div>
               </div>
         </div>
@@ -26,17 +25,17 @@ Review: <textarea class="reviewBody" name="body" rows="4" cols="50">
 <input type="submit">
 </form>
 
-{{#each Reviews}}
+{{#each this.Reviews}}
 
 <div class="row info">
         <div class="col-sm-8">
             <div class="card">
               <div class="card-title">
-                <h2 class="review">{{Reviews.name}}</h2>
+                <h2 class="review">{{username}}</h2>
               </div>
                 <div class="card-body">
-                  <p class="card-text">{{Reviews.body}}</p>
-                  <div class="card-footer">{{Reviews.createdAt}}</div>
+                  <p class="card-text">{{body}}</p>
+                  <div class="card-footer">{{createdAt}}</div>
                 </div>
               </div>
         </div>
