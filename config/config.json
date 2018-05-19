@@ -1,11 +1,19 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "i6nvnbxsrxpmap67",
     "password": "wegnp1klnbvwlbay",
     "database": "hlz93qysnyazimm3",
     "host": "wftuqljwesiffol6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "port": "3306"
+=======
+    "username": "root",
+    "password": "letmein1",
+    "database": "mycle_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+>>>>>>> 113a9e04247ea1f074ea1df9ab6ad9a27fa5eca1
   },
   "test": {
     "username": "root",
