@@ -1,6 +1,4 @@
 // dependencies
-// var Locations = require("../models/locations.js")
-// var Reviews = require("../models/reviews.js")
 
 var db = require("../models")
 
@@ -49,7 +47,6 @@ app.get("/api/category/:category", function(req, res) {
   		category: req.params.category
   	},
 
-
   }).then(function(results) {
   	var hbsObject = {
   	  Locations: results
@@ -59,7 +56,6 @@ app.get("/api/category/:category", function(req, res) {
   	res.json(hbsObject)
   });
 });
-
 
 
 // put for liking locations
@@ -79,7 +75,5 @@ app.put("/api/likes", function(req, res) {
   });
 });
 
-
 }
 
-// Model.update({ field: sequelize.literal('field + 2') }, { where: { id: model_id } });
