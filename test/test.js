@@ -1,27 +1,40 @@
 var Nightmare = require("nightmare");
 var expect = require("chai").expect;
 
-describe("Demo", function() {
-  // The default tests in mocha is 2 seconds.
-  // Extending it to 30 seconds to have time to load the pages
+describe("MyCLE Testing", function () {
 
   this.timeout(30000);
-  it("should open google", function(done) {
+  it("should open the localhost", function (done) {
     // entering the page url
-    Nightmare({ show: true })
-      .goto("https://www.google.com")
+    Nightmare({
+        show: true
+      })
+      .goto("localhost:8080")
       // Evaluate the title
-      .evaluate(function() {
+      .evaluate(function () {
         return document.title;
       })
       // Asset the title is as expected
-      .then(function(title) {
-        expect(title).to.equal("Google");
+      .then(function (title) {
+        expect(title).to.equal("MyCLE");
         done();
       });
   });
 
-//   it("Will throw a test error", function() {
-//     throw new Error("Failure is always an option, and that's the option I chose for this function.");
-//   });
+  // it("Should open localhost:8080 and confirm the home page works", function (done) {
+  //   // entering the page url
+  //   new Nightmare({
+  //       show: true
+  //     })
+  //     .goto("localhost:8080")
+  //     // Evaluate the title
+  //     .evaluate(function () {
+  //       return document.title;
+  //     })
+  //     // Asset the title is as expected
+  //     .then(function (title) {
+  //       expect(title).to.equal("MyCLE");
+  //       done();
+  //     });
+  // });
 });

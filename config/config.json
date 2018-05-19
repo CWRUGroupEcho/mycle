@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "letmein1",
-=======
-    "password": "Envy3689",
->>>>>>> b8fd23f23666e650178c4baefd66fc32e59d7dd5
     "database": "mycle_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
