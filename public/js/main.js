@@ -3,8 +3,9 @@ $(document).ready(function() {
 
 
 // PUT for liking locations
-$(".LIKEBUTTON").on("click", function(event) {
-	var id = $(this).data("id");
+$(".like").on("click", function(event) {
+
+	var id = $(this).data("data-id");
 	var newLikes = (Number($(this).data("likes"))+1);
 
 	var newLikeNum = {
@@ -23,35 +24,18 @@ $(".LIKEBUTTON").on("click", function(event) {
 	})
 }
 
-$(".SUBMITBUTTON").on("submit", function(event) {
-	event.preventDefault();
-
-	var newReview = {
-		author: $("#AUTHOR").val().trim(),
-		body: $("#BODY").val()
-	};
-
-	// send POST request
-	$.ajax("/api/review", {
-		type: "POST",
-		data: newReview
-	}).then(
-	function() {
-		console.log("new review posted");
-
-		location.reload();
-	})
-
-
-
-})
-
-
-
-
-
-
-
 
 
 };
+
+
+
+////////////////////////MAPS API/////////////////////////////
+// script tags: 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+type="text/javascript"></script>
+
+
+API KEY: AIzaSyAPDiDit4kovSff-o1DtYGHyWjyr4RHUqI
+
+

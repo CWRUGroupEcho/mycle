@@ -8,14 +8,13 @@ module.exports = function(app) {
     console.log("New Review:");
     console.log(req.body);
     db.Reviews.create({
-      locationName: req.body.locationName,
+
       author: req.body.author,
       body: req.body.body
     }), function(results) {
       res.json(results)
     }
   });
-
 
 // return Reviews;
 }

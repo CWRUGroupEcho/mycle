@@ -49,7 +49,7 @@ app.get("/api/category/:category", function(req, res) {
   		category: req.params.category
   	},
 
-  	// include: [db.Reviews]
+
   }).then(function(results) {
   	var hbsObject = {
   	  Locations: results
@@ -60,22 +60,7 @@ app.get("/api/category/:category", function(req, res) {
   });
 });
 
-//get reviews for locations
-app.get("/api/reviews/:Locationid", function(req, res) {
-  db.Reviews.findAll({
-	where: {
-	  Locationid: req.params.Locationid
-	},
-	include: [db.Locations]
-  }).then(function(results) {
-  	var hbsObject = {
-  		Reviews: results
-  	};
-  	console.log(hbsObject);
-  	// res.render("reviews", hbsObject);
-  	res.json(hbsObject)
-  })
-})
+
 
 // put for liking locations
 app.put("/api/likes", function(req, res) {
