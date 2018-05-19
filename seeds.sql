@@ -1,3 +1,5 @@
+USE mycle_db;
+
 INSERT INTO locations (locationName, category, description, address, picture_url) VALUES ("West Side Market", "Culture", "Cleveland's oldest public market with over 100 vendors offering food, drink and groceries.", "1979 W 25th St, Cleveland, OH 44113", "img/wsm.jpg");
 INSERT INTO locations (locationName, category, description, address, picture_url) VALUES ("Lakeview Cemetery", "Culture", "A peaceful, sprawling and historical burial ground adorned with the Wade Chapel, Garfield Monument and home of graves to a few historical figures.", "12316 Euclid Avenue, Cleveland, OH 44106", "img/lakeview.jpg");
 INSERT INTO locations (locationName, category, description, address, picture_url) VALUES ("A Christmas Story House", "Culture", "The house featured in the movie, A Christmas Story.", "3159 W 11th St, Cleveland, OH 44109", "img/christmashouse.jpg");

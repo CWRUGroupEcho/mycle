@@ -1,7 +1,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Locations = sequelize.define("Locations", {
-    name: {
+    locationName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    photo: {
+    picture_url: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
