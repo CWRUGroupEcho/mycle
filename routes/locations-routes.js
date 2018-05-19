@@ -31,7 +31,7 @@ module.exports = function (app) {
 			},
 			include: [db.Reviews]
 		}).then(function (results) {
-
+			
 			res.render("location", results.dataValues);
 		});
 	});
@@ -84,13 +84,13 @@ module.exports = function (app) {
 			console.log("Current likes: " + results.dataValues.likes)
 			var newLikes = Number((results.dataValues.likes) + 1)
 			db.Locations.update({
-				likes: newLikes,				
+				likes: newLikes,
 			}, {
-				where: {id: thisId },
-			})
-			.then(function(data){
-				console.log("It worked!")
-			})
+					where: { id: thisId },
+				})
+				.then(function (data) {
+					console.log("It worked!")
+				})
 
 		})
 
