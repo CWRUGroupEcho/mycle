@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "i6nvnbxsrxpmap67",
-    "password": "wegnp1klnbvwlbay",
-    "database": "hlz93qysnyazimm3",
-    "host": "wftuqljwesiffol6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "Envy3689",
+    "database": "mycle_db",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "port": "3306"
   },
