@@ -31,7 +31,7 @@ module.exports = function (app) {
 			},
 			include: [db.Reviews]
 		}).then(function (results) {
-			
+
 			res.render("location", results.dataValues);
 		});
 	});

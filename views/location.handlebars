@@ -1,39 +1,45 @@
-   <head>
-      <link rel="stylesheet" href="../css/style.css" type="text/css" />
-    </head>
+<head>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
 <div class="row info">
-        <div class="col-sm-8">
-            <div class="card">
-              <div class="card-title">
-                <h2 class="location"><a href="/api/locations/{{id}}">{{locationName}}</a></h2>
-              </div>
-                <div class="card-body">
-                  <p class="card-text">{{description}}</p>
-                  <button class="like" data-id="{{id}}"><i class="fas fa-thumbs-up"></i></button>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-4">
-          <img class="image" src="/{{picture_url}}">
-        </div>
+  <div class="col-sm-8">
+    <div class="card">
+      <div class="card-title">
+        <h2 class="location">
+          <a href="/api/locations/{{id}}">{{locationName}}</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{description}}</p>
+        <button class="like" data-id="{{id}}">
+          <i class="fas fa-thumbs-up"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <img class="image" src="/{{picture_url}}">
+  </div>
 </div>
 <div class="row">
   <div class="col-sm-6">
-    <iframe
-  width="100%"
-  height="100%"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPDiDit4kovSff-o1DtYGHyWjyr4RHUqI&q={{address}}" allowfullscreen>
-</iframe>
-    {{!-- <img src="https://maps.googleapis.com/maps/api/staticmap?center=Dunham+Tavern,6709+Euclid+Ave,Cleveland&key=AIzaSyAPDiDit4kovSff-o1DtYGHyWjyr4RHUqI&size=200x200" alt="did not work"> --}}
+    <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPDiDit4kovSff-o1DtYGHyWjyr4RHUqI&q={{address}}"
+      allowfullscreen>
+    </iframe>
+    {{!--
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=Dunham+Tavern,6709+Euclid+Ave,Cleveland&key=AIzaSyAPDiDit4kovSff-o1DtYGHyWjyr4RHUqI&size=200x200"
+      alt="did not work"> --}}
   </div>
   <div class="col-sm-6">
     <form action="/api/submitReview/{{id}}" method="post">
-Name: <input type="text" name="name"><br>
-Review: <textarea class="reviewBody" name="body" rows="4" cols="50"> 
-</textarea><br>
-<input type="submit">
-</form>
+      Name:
+      <input type="text" name="name">
+      <br> Review:
+      <textarea class="reviewBody" name="body" rows="4" cols="50"> 
+</textarea>
+      <br>
+      <input type="submit">
+    </form>
   </div>
 </div>
 
@@ -42,17 +48,17 @@ Review: <textarea class="reviewBody" name="body" rows="4" cols="50">
 {{#each this.Reviews}}
 
 <div class="row info">
-        <div class="col-sm-8">
-            <div class="card">
-              <div class="card-title">
-                <h2 class="review">{{username}}</h2>
-              </div>
-                <div class="card-body">
-                  <p class="card-text">{{body}}</p>
-                  <div class="card-footer">{{createdAt}}</div>
-                </div>
-              </div>
-        </div>
+  <div class="col-sm-8">
+    <div class="card">
+      <div class="card-title">
+        <h2 class="review">{{username}}</h2>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{body}}</p>
+        <div class="card-footer">{{createdAt}}</div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
