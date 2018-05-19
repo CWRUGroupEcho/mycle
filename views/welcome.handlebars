@@ -1,0 +1,23 @@
+
+    {{#each Locations}}
+    
+    <div class="row info">
+        <div class="col-sm-8">
+            <div class="card">
+              <div class="card-title">
+                <h2 class="location"><a href="/api/locations/{{id}}">{{name}}</a></h2>
+              </div>
+                <div class="card-body">
+                  <p class="card-text">{{description}}</p>
+                  <button class="like" data-id="{{id}}"><i class="fas fa-thumbs-up"></i></button>
+                  <a href="/api/review/:{{id}}" data-id="{{id}}" class="btn btn-info review" style="float:right" role="button">Review!</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-4">
+          <img src={{photo}} alt="404 Picture Not Found">
+        </div>
+      </div>
+
+
+  {{/each}}

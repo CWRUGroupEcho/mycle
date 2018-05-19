@@ -60,6 +60,16 @@ h1 {
 	opacity: .8;
 }
 
+.info{
+	background-color: aqua;
+	margin: 5px 1px;
+	padding: 5px 0px;
+}
+
+.location{
+	background-color: blue;
+}
+
 /* Media queries for screens less than 992px */
 
 @media screen and (max-width: 992px) {
