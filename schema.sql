@@ -1,9 +1,13 @@
 ### Schema
 
+/* CREATE database mycle_db; */
 USE mycle_db;
 
+SELECT * FROM reviews;
 
-CREATE TABLE locations
+
+
+/* CREATE TABLE locations
 (
 	id int NOT NULL AUTO_INCREMENT,
 	locationName varchar(50) NOT NULL,
@@ -19,11 +23,11 @@ CREATE TABLE locations
 CREATE TABLE reviews
 (
     id int NOT NULL AUTO_INCREMENT,
+	locationId int,
 	author varchar(50) DEFAULT "Guest",
 	body varchar(250) NOT NULL,
     created_at DATE,
     PRIMARY KEY (id)
-);
+); */
 
- ALTER TABLE locations
-ADD COLUMN likes int DEFAULT 0 AFTER picture_url;
+
