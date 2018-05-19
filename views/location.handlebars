@@ -19,17 +19,24 @@
         </div>
 </div>
 
+<form action="/api/submitReview/{{id}}" method="post">
+Name: <input type="text" name="name"><br>
+Review: <textarea class="reviewBody" name="body" rows="4" cols="50"> 
+</textarea><br>
+<input type="submit">
+</form>
+
 {{#each Reviews}}
 
 <div class="row info">
         <div class="col-sm-8">
             <div class="card">
               <div class="card-title">
-                <h2 class="review">{{name}}</h2>
+                <h2 class="review">{{Reviews.name}}</h2>
               </div>
                 <div class="card-body">
-                  <p class="card-text">{{body}}</p>
-                  <div class="card-footer">{{createdAt}}</div>
+                  <p class="card-text">{{Reviews.body}}</p>
+                  <div class="card-footer">{{Reviews.createdAt}}</div>
                 </div>
               </div>
         </div>

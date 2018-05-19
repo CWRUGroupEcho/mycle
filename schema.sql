@@ -3,7 +3,7 @@
 /* CREATE database mycle_db; */
 USE mycle_db;
 
-SELECT * FROM locations;
+SELECT * FROM reviews;
 
 
 
@@ -23,12 +23,11 @@ SELECT * FROM locations;
 CREATE TABLE reviews
 (
     id int NOT NULL AUTO_INCREMENT,
+	locationId int,
 	author varchar(50) DEFAULT "Guest",
 	body varchar(250) NOT NULL,
     created_at DATE,
     PRIMARY KEY (id)
 ); */
-/* 
- ALTER TABLE locations
-ADD COLUMN category varchar(25)  AFTER picture_url; 
-ADD COLUMN likes int DEFAULT 0 AFTER picture_url; */
+
+
