@@ -33,7 +33,7 @@ app.get("/api/locations/:id", function(req, res) {
   	},
   	include: [db.Reviews]
   }).then(function(results) {
-		// console.log(results) 
+		console.log(results) 
   	
   	res.render("location", results.dataValues);
   });

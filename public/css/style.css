@@ -70,6 +70,10 @@ h1 {
 	background-color: blue;
 }
 
+.image{
+	width: 200px;
+	height: 200px;
+}
 /* Media queries for screens less than 992px */
 
 @media screen and (max-width: 992px) {
