@@ -2,21 +2,22 @@ var db = require("../models")
 
 module.exports = function(app) {
 
-  app.get("/api/review", function(req,res){
+  app.get("/api/review/:id", function(req,res){
     res.render("review")
   });
 
 
   // Add a review
-  app.post("/api/review", function(req, res) {
+  app.post("/api/review/:id/submitReview", function(req, res) {
     console.log("New Review:");
     console.log(req.body);
     db.Reviews.create({
-      locationName: req.body.locationName,
-      username: req.body.username,
+      locationID: req.params.id,
+      name: req.body.name,
       body: req.body.body
     }), function(results) {
-      res.json(results)
+      console.log(results)
+      res.redirect("/")
     }
   });
 }
