@@ -46,7 +46,7 @@ require("./routes/review-routes.js")(app);
 // =============================================================
 
 db.sequelize.sync({ force: false })
-   .then(function() {
-       console.log("Starting the server on port " + PORT)
-       app.listen(PORT);
-   });
+    .then(function () {
+        console.log("Starting the server on port " + PORT)
+        app.listen(PORT);
+    });

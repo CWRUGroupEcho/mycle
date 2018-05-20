@@ -1,5 +1,5 @@
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Locations = sequelize.define("Locations", {
     locationName: {
       type: DataTypes.STRING,
@@ -35,17 +35,17 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    }, 
+    },
     likes: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
       allowNull: false
     }
   }, {
-    timestamps: false
-});
+      timestamps: false
+    });
 
-  Locations.associate = function(models) {
+  Locations.associate = function (models) {
     Locations.hasMany(models.Reviews, {
       onDelete: "cascade"
     });
