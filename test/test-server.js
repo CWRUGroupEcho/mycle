@@ -6,7 +6,7 @@ describe("Homepage Test", function () {
   // Extending it to 30 seconds to have time to load the pages
 
   this.timeout(30000);
-  var url = "http://localhost:8080";
+  var url = "https://mycle.herokuapp.com";
 
   // First test to see if the server is running
 
