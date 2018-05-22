@@ -1,12 +1,52 @@
-# mycle
+# MyCleveland
 
-The purpose of this app is to create a webpage that is based on one database with two tables.
+## Description
+A full stack web application designed to allow users to research, review, and like attractions in the greater Cleveland area. 
 
-A static table that contains information relating to attractions around Cleveland.
-An updatable table for user review submissions.
 
-When a user loads the webpage they will see a navbar allowing them to travel to the different categories and the top X results for most popular attractions.
+## Getting Started
+- To view the live site posted via heroku: 
+    - https://mycle.herokuapp.com
+- To perform unit testing on the javascipt:
+    - Clone the Github repo https://github.com/CWRUGroupEcho/mycle
+    - In terminal run the 'npm install' command
+    - Enter 'npm test' to run Mocha + Chai testing
 
-Each attraction will have a clickable title to route the user to it's individual page, a brief desciption, a picture, a like button that will increment the attraction in the table, and a submit review button that will be tied to a table that will be associated with each attractions unique ID.
+## Technology used
+- Node.js
+- Sequalize
+- Body-Parser NPM Package  
+- Express NPM Package
+- Path NPM Package
+- Heroku
+- jQuery
+- Express
+- Express Handlebars
+- Bootstrap
+- Googlemaps NPM Package
+- Mocha
+- Chai
+- Nightmare
+- JawsDB
 
-Each category page will link to an API route /api/:category, to show all elements in that category. Each individual page will similarly have a route /api/:attraction. Included in the individual page will be a google-maps feature to show the attractions location and possibly get directions as well as a list of user reviews for the attraction.
+### Prerequisites
+```
+- Node.js - Download the latest version of Node https://nodejs.org/en/
+```
+
+## Built With
+
+* Visual Studio Code
+* Terminal/Git Bash
+* Sublime Text 3
+* Heroku
+* MySQL
+* GitKraken
+
+## Authors
+
+* **Liz Trenholme** - [Liz Trenholme](https://github.com/liztrenholme)
+* **Kenneth Robinson** - [Kenneth Robinson](https://github.com/Fuzzy-chan)
+* **Lindsay Dillon** - [Lindsay Dillon](https://github.com/ldillon16)
+* **Kevin Glasow** - [Kevin Glasow](https://github.com/kevinglasow)
+
