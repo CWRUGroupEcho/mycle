@@ -207,7 +207,10 @@ a:hover {
 
 .review {
 	background-color: #EBA745;
-	font-weight: bold; 
+    font-weight: bold; 
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin: 2px;
 }
 
 .fas {
@@ -215,10 +218,14 @@ a:hover {
 	height: 25px;
 }
 
-.card {
-	margin: 5px 0 5px -10px;
-	height: 20em;
+.loca {
+	
+    height: 100%;
+    min-height: 20em;
+    
 }
+
+
 
 .location {
     background-color: #fff;
@@ -229,7 +236,8 @@ a:hover {
 }
 
 .card-body {
-	background-color: #F2EAE0;
+    background-color: #F2EAE0;
+      
 }
 
 .card-text {
