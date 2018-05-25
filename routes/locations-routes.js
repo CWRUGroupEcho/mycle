@@ -72,7 +72,7 @@ module.exports = function (app) {
 	})
 
 	// put for liking locations
-	app.put("/api/likes", function (req, res) {
+	app.put("/api/like", function (req, res) {
 		var thisId = req.body.id
 		console.log(req.body.id);
 
@@ -93,19 +93,29 @@ module.exports = function (app) {
 				})
 
 		})
+	})
 
-
-		// db.Locations.update(
-		// {likes: likes++},
-		// {where: req.body.id}
-		// ).then(function(results) {
-		// 	console.log(results.dataValues)
-		// var hbsObject = {
-		// Locations: results
-		// };
-		// // console.log(hbsObject);
-		// res.render("location", hbsObject);
-		// });
+		app.put("/api/unlike", function (req, res) {
+			var thisId = req.body.id
+			console.log(req.body.id);
+	
+			db.Locations.findOne({
+				where: {
+					id: thisId
+				}
+			}).then(function (results) {
+				console.log("Current likes: " + results.dataValues.likes)
+				var newLikes = Number((results.dataValues.likes) - 1)
+				db.Locations.update({
+					likes: newLikes,
+				}, {
+						where: { id: thisId },
+					})
+					.then(function (data) {
+						console.log("It worked!")
+					})
+	
+			})
 	});
 
 

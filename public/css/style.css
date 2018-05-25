@@ -257,6 +257,10 @@ a:hover {
     border-image-repeat: round;
 }
 
+.liked{
+    background-color: yellow;
+}
+
 
 /* Media queries for screens less than 992px */
 
